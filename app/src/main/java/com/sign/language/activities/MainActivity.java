@@ -32,22 +32,17 @@ public class MainActivity extends Activity {
         customGridAdapter = new GridViewAdapter(this, R.layout.row_grid, getData(choice));
         gridView.setAdapter(customGridAdapter);
 
-        gridView.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                /* Call DisplayActivity with the choice and image position */
-                Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
-                intent.putExtra("Image Int", position);
-                intent.putExtra("Choice", choice);
-                startActivity(intent);
-                finish();
-            }
-
+        gridView.setOnItemClickListener((parent, v, position, id) -> {
+            /* Call DisplayActivity with the choice and image position */
+            Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+            intent.putExtra("Image Int", position);
+            intent.putExtra("Choice", choice);
+            startActivity(intent);
         });
     }
 
     private ArrayList<ImageItem> getData(int choice) {
-        final ArrayList<ImageItem> imageItems = new ArrayList<ImageItem>();
+        final ArrayList<ImageItem> imageItems = new ArrayList<>();
 
         int[] arr_st = {R.array.image_ids,
                 R.array.image_num,

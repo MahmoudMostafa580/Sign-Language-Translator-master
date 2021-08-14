@@ -1,6 +1,7 @@
 /* Activity which shows 3 choices in the sign language dictionary */
 package com.sign.language.activities;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +11,12 @@ import android.content.Intent;
 
 import androidx.appcompat.widget.AppCompatImageButton;
 
+import com.google.android.material.button.MaterialButton;
 import com.sign.language.R;
 
 public class FirstActivity extends Activity implements OnClickListener {
-    AppCompatImageButton alphabetBtn,numbersBtn,frequentlyUsedBtn,homeBtn,backBtn;
+    AppCompatImageButton homeBtn,backBtn;
+    MaterialButton alphabetBtn,numbersBtn,frequentlyUsedBtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,7 @@ public class FirstActivity extends Activity implements OnClickListener {
         homeBtn.setOnClickListener(this);
     }
 
+    @SuppressLint("NonConstantResourceId")
     public void onClick(View v) {
         /* Call MainActivity with appropriate choice */
         Intent intent = new Intent(FirstActivity.this, MainActivity.class);
@@ -40,29 +44,22 @@ public class FirstActivity extends Activity implements OnClickListener {
             case R.id.alphabets_btn:
                 intent.putExtra("Userchoice", 1);
                 startActivity(intent);
-                finish();
                 break;
 
             case R.id.numbers_btn:
                 intent.putExtra("Userchoice", 2);
                 startActivity(intent);
-                finish();
                 break;
 
             case R.id.frequently_used_btn:
                 intent.putExtra("Userchoice", 3);
                 startActivity(intent);
-                finish();
                 break;
 
             case R.id.back_btn:
-                startActivity(new Intent(FirstActivity.this, SearchTextActivity.class));
-                finish();
-                break;
 
             case R.id.home_btn:
                 startActivity(new Intent(FirstActivity.this, SearchTextActivity.class));
-                finish();
                 break;
         }
     }

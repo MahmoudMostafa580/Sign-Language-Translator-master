@@ -103,7 +103,6 @@ public class DisplayActivity extends Activity implements OnClickListener {
         if (v.getId() == R.id.go_back_button) {
             Intent intent = new Intent(DisplayActivity.this, FirstActivity.class);
             startActivity(intent);
-            finish();
         }
 
         if (v.getId() == R.id.Exit_button) {
@@ -113,19 +112,12 @@ public class DisplayActivity extends Activity implements OnClickListener {
                     .setMessage("Click yes to exit!")
                     .setCancelable(false)
                     .setPositiveButton(R.string.yes,
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    moveTaskToBack(true);
-                                    Process.killProcess(Process.myPid());
-                                    System.exit(1);
-                                }
+                            (dialog, id) -> {
+                                moveTaskToBack(true);
+                                Process.killProcess(Process.myPid());
+                                System.exit(1);
                             })
-                    .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-
-                            dialog.cancel();
-                        }
-                    });
+                    .setNegativeButton(R.string.no, (dialog, id) -> dialog.cancel());
 
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();

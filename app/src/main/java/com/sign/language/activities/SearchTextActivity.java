@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 import org.jsoup.Jsoup;
@@ -49,7 +50,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
     private Bitmap bitmap;
     private StringBuffer url;
     /* URLs list which will contain URLs for resultant image */
-    private List<StringBuffer> mURLs = new LinkedList<StringBuffer>();
+    private List<StringBuffer> mURLs = new LinkedList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,7 +106,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             /* ImageView which shows the result images*/
             String strtxt;
 
-            if (searchLayout.getEditText().getText().toString().isEmpty()) {
+            if (Objects.requireNonNull(searchLayout.getEditText()).getText().toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), R.string.message_empty, Toast.LENGTH_SHORT).show();
                 return;
             } else
@@ -133,10 +134,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             }
             try {
                 loadNext();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
@@ -146,7 +144,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         if (v.getId() == R.id.go_to_dictionary_imageBtn) {
             Intent intent = new Intent(SearchTextActivity.this, FirstActivity.class);
             startActivity(intent);
-            finish();
         }
 
 
@@ -160,7 +157,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             String topResult;
             /* Choose the first word from the result and append to the edit TextBox */
             topResult = matches.get(0);
-            searchLayout.getEditText().append(topResult);
+            Objects.requireNonNull(searchLayout.getEditText()).append(topResult);
 
             super.onActivityResult(requestCode, resultCode, data);
         }
@@ -176,7 +173,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
                 voiceConverterImageBtn.setEnabled(false);
             }
         }
-        return;
     }
 
     public void onPause() {
