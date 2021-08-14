@@ -144,7 +144,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
 
         /* Open the Sign Language dictionary with a Toast message */
         if (v.getId() == R.id.go_to_dictionary_imageBtn) {
-            Toast.makeText(getApplicationContext(), "Moving to sign language dictionary!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SearchTextActivity.this, FirstActivity.class);
             startActivity(intent);
             finish();
@@ -188,32 +187,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         super.onResume();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle("Exit Application?");
-        alertDialogBuilder
-                .setMessage("Click yes to exit!")
-                .setCancelable(false)
-                .setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                moveTaskToBack(true);
-                                android.os.Process.killProcess(android.os.Process.myPid());
-                                System.exit(1);
-                            }
-                        })
-
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-    }
 
     /* Removes URL one by one from the list and delegates to LoadImage method */
     private void loadNext() throws InterruptedException, ExecutionException {
