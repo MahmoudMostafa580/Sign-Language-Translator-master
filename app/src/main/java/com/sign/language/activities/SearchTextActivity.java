@@ -17,8 +17,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,9 +27,6 @@ import android.speech.SpeechRecognizer;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatImageButton;
@@ -83,7 +78,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         /* Voice recognition using Google Speech to Text API*/
         if (v.getId() == R.id.voice_converter_imageBtn) {
 
-            searchLayout.getEditText().setText("");
+            Objects.requireNonNull(searchLayout.getEditText()).setText("");
 
             Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
             intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -104,15 +99,15 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             Toast.makeText(getApplicationContext(), R.string.message_processing, Toast.LENGTH_SHORT).show();
 
             /* ImageView which shows the result images*/
-            String strtxt;
+            String searchString;
 
             if (Objects.requireNonNull(searchLayout.getEditText()).getText().toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), R.string.message_empty, Toast.LENGTH_SHORT).show();
                 return;
             } else
-                strtxt = searchLayout.getEditText().getText().toString();
+                searchString = searchLayout.getEditText().getText().toString();
             /* Split the input sentence into words */
-            String[] words = strtxt.split("\\s+");
+            String[] words = searchString.split("\\s+");
 
             /*Remove special characters and convert uppercase characters to lowercase characters*/
             for (int i = 0; i < words.length; i++) {
@@ -140,9 +135,9 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             }
         }
 
-        /* Open the Sign Language dictionary with a Toast message */
+        /* Open the Sign Language dictionary */
         if (v.getId() == R.id.go_to_dictionary_imageBtn) {
-            Intent intent = new Intent(SearchTextActivity.this, FirstActivity.class);
+            Intent intent = new Intent(SearchTextActivity.this, SelectDictionaryActivity.class);
             startActivity(intent);
         }
 

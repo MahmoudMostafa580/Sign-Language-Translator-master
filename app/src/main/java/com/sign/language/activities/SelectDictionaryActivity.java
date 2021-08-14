@@ -14,31 +14,29 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import com.google.android.material.button.MaterialButton;
 import com.sign.language.R;
 
-public class FirstActivity extends Activity implements OnClickListener {
-    AppCompatImageButton homeBtn,backBtn;
+public class SelectDictionaryActivity extends Activity implements OnClickListener {
+    AppCompatImageButton homeBtn;
     MaterialButton alphabetBtn,numbersBtn,frequentlyUsedBtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_select_dictionary);
 
         alphabetBtn =findViewById(R.id.alphabets_btn);
         numbersBtn=findViewById(R.id.numbers_btn);
         frequentlyUsedBtn=findViewById(R.id.frequently_used_btn);
         homeBtn=findViewById(R.id.home_btn);
-        backBtn=findViewById(R.id.back_btn);
 
         alphabetBtn.setOnClickListener(this);
         numbersBtn.setOnClickListener(this);
         frequentlyUsedBtn.setOnClickListener(this);
-        backBtn.setOnClickListener(this);
         homeBtn.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View v) {
         /* Call MainActivity with appropriate choice */
-        Intent intent = new Intent(FirstActivity.this, MainActivity.class);
+        Intent intent = new Intent(SelectDictionaryActivity.this, SignLanguageSymbolsActivity.class);
         switch (v.getId())
         {
             case R.id.alphabets_btn:
@@ -56,10 +54,8 @@ public class FirstActivity extends Activity implements OnClickListener {
                 startActivity(intent);
                 break;
 
-            case R.id.back_btn:
-
             case R.id.home_btn:
-                startActivity(new Intent(FirstActivity.this, SearchTextActivity.class));
+                startActivity(new Intent(SelectDictionaryActivity.this, SearchTextActivity.class));
                 break;
         }
     }

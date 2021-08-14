@@ -9,23 +9,20 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.sign.language.R;
 import com.sign.language.adapters.GridViewAdapter;
 import com.sign.language.model.ImageItem;
 
-public class MainActivity extends Activity {
+public class SignLanguageSymbolsActivity extends Activity {
     private GridView gridView;
     private GridViewAdapter customGridAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_lang_symbols);
 
         final int choice = getIntent().getExtras().getInt("Userchoice");
         gridView = (GridView) findViewById(R.id.gridView);
@@ -34,7 +31,7 @@ public class MainActivity extends Activity {
 
         gridView.setOnItemClickListener((parent, v, position, id) -> {
             /* Call DisplayActivity with the choice and image position */
-            Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+            Intent intent = new Intent(SignLanguageSymbolsActivity.this, DisplayActivity.class);
             intent.putExtra("Image Int", position);
             intent.putExtra("Choice", choice);
             startActivity(intent);

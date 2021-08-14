@@ -3,7 +3,6 @@ package com.sign.language.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.*;
 import android.os.Process;
@@ -101,7 +100,7 @@ public class DisplayActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         // TODO Auto-generated method stub
         if (v.getId() == R.id.go_back_button) {
-            Intent intent = new Intent(DisplayActivity.this, FirstActivity.class);
+            Intent intent = new Intent(DisplayActivity.this, SelectDictionaryActivity.class);
             startActivity(intent);
         }
 
