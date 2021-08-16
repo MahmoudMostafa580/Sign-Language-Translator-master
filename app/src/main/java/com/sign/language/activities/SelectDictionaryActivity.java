@@ -16,7 +16,7 @@ import com.sign.language.R;
 
 public class SelectDictionaryActivity extends Activity implements OnClickListener {
     AppCompatImageButton homeBtn;
-    MaterialButton alphabetBtn,numbersBtn,frequentlyUsedBtn;
+    MaterialButton alphabetBtn,numbersBtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +24,10 @@ public class SelectDictionaryActivity extends Activity implements OnClickListene
 
         alphabetBtn =findViewById(R.id.alphabets_btn);
         numbersBtn=findViewById(R.id.numbers_btn);
-        frequentlyUsedBtn=findViewById(R.id.frequently_used_btn);
         homeBtn=findViewById(R.id.home_btn);
 
         alphabetBtn.setOnClickListener(this);
         numbersBtn.setOnClickListener(this);
-        frequentlyUsedBtn.setOnClickListener(this);
         homeBtn.setOnClickListener(this);
     }
 
@@ -46,11 +44,6 @@ public class SelectDictionaryActivity extends Activity implements OnClickListene
 
             case R.id.numbers_btn:
                 intent.putExtra("Userchoice", 2);
-                startActivity(intent);
-                break;
-
-            case R.id.frequently_used_btn:
-                intent.putExtra("Userchoice", 3);
                 startActivity(intent);
                 break;
 

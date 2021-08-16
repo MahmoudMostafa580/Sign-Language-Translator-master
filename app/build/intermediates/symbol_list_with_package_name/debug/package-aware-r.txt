@@ -1741,6 +1741,7 @@ drawable frame_050
 drawable frame_051
 drawable frame_052
 drawable grid_color_selector
+drawable ic_alphabets_cubes
 drawable ic_clock_black_24dp
 drawable ic_close
 drawable ic_dictionary_book
@@ -1751,6 +1752,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_numbers_cubes
 drawable ic_search
 drawable ic_sign_language
 drawable ic_voice
@@ -1960,7 +1962,6 @@ id fixed
 id flip
 id floating
 id forever
-id frequently_used_btn
 id ghost_view
 id ghost_view_holder
 id go_to_dictionary_imageBtn
@@ -2414,11 +2415,9 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string error_icon_content_description
-string exit_application
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string fuw
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -2479,7 +2478,6 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
-string no
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2489,7 +2487,6 @@ string search_menu_title
 string select_dictionary
 string speak
 string status_bar_notification_info_overflow
-string yes
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

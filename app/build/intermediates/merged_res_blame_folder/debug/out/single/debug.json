@@ -8,6 +8,10 @@
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\layout\\row_grid.xml"
     },
     {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_numbers_cubes.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_numbers_cubes.xml"
+    },
+    {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_044.jpeg.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_044.jpeg"
     },
@@ -114,6 +118,10 @@
     {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_035.jpeg.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_035.jpeg"
+    },
+    {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_alphabets_cubes.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_alphabets_cubes.xml"
     },
     {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_005.jpeg.flat",
@@ -262,5 +270,9 @@
     {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_021.jpeg.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_021.jpeg"
+    },
+    {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v23_activity_select_dictionary.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\layout-v23\\activity_select_dictionary.xml"
     }
 ]
