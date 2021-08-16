@@ -1,31 +1,25 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
     android:background="#ffffff"
     android:padding="16dp"
-    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+    android:theme="@style/Theme.AppCompat.Light.Dialog"
     tools:context=".activities.DisplayActivity">
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/go_back_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/blue"
-        android:src="@drawable/abc_vector_test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/Exit_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/blue"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:tint="@color/blue"
         android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@id/go_back_button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -33,9 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/frame_001"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/Exit_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

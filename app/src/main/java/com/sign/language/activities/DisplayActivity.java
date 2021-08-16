@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import com.sign.language.R;
 
 public class DisplayActivity extends Activity implements OnClickListener {
-    private ImageButton finishbtn, previousbtn;
+    private ImageButton finishbtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,10 @@ public class DisplayActivity extends Activity implements OnClickListener {
         ImageView imagev = (ImageView) findViewById(R.id.image_display);
 
         finishbtn = (ImageButton) findViewById(R.id.Exit_button);
-        previousbtn = (ImageButton) findViewById(R.id.go_back_button);
+
 
         finishbtn.setOnClickListener(this);
-        previousbtn.setOnClickListener(this);
+
 
         /* Compute index based on choice(Alphabets/Numbers/Frequently Used words) */
         if (choice == 2)
@@ -98,28 +98,10 @@ public class DisplayActivity extends Activity implements OnClickListener {
     }
 
     public void onClick(View v) {
-        // TODO Auto-generated method stub
-        if (v.getId() == R.id.go_back_button) {
-            Intent intent = new Intent(DisplayActivity.this, SelectDictionaryActivity.class);
-            startActivity(intent);
-        }
 
         if (v.getId() == R.id.Exit_button) {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle(R.string.exit_application);
-            alertDialogBuilder
-                    .setMessage("Click yes to exit!")
-                    .setCancelable(false)
-                    .setPositiveButton(R.string.yes,
-                            (dialog, id) -> {
-                                moveTaskToBack(true);
-                                Process.killProcess(Process.myPid());
-                                System.exit(1);
-                            })
-                    .setNegativeButton(R.string.no, (dialog, id) -> dialog.cancel());
-
-            AlertDialog alertDialog = alertDialogBuilder.create();
-            alertDialog.show();
+            startActivity(new Intent(getApplicationContext(), SignLanguageSymbolsActivity.class));
+            finish();
         }
     }
 }

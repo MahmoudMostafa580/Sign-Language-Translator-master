@@ -56,6 +56,7 @@ public class SelectDictionaryActivity extends Activity implements OnClickListene
 
             case R.id.home_btn:
                 startActivity(new Intent(SelectDictionaryActivity.this, SearchTextActivity.class));
+                finish();
                 break;
         }
     }

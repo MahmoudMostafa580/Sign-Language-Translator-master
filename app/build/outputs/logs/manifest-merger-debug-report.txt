@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\204d56b624e751e7990ccfa8a11e8889\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\0b72cca5aef8e2f071ebd052cd8ee1aa\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -37,9 +37,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mahmo\.g
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\750b7b3e6ba5087b346f6e90470bbb4c\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a81ff3a6f4fe4cdba627ce49c2369465\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\8b1826e082b884f9fc593d27a9580a45\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:4:5-32
 		INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml
@@ -65,7 +65,7 @@ ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\
 	android:name
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:10:22-64
 application
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:12:5-55:19
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:12:5-56:19
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\1d7e9fd91787b67e581a3c9368312805\constraintlayout-2.0.1\AndroidManifest.xml:9:5-20
@@ -84,7 +84,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ma
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:9-72
-activity#com.sign.language.activities.MainActivity
+activity#com.sign.language.activities.SignLanguageSymbolsActivity
 ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:18:9-23:20
 	android:screenOrientation
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:21:13-49
@@ -93,8 +93,8 @@ ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\
 	android:configChanges
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:22:13-63
 	android:name
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:19:13-69
-activity#com.sign.language.activities.FirstActivity
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:19:13-84
+activity#com.sign.language.activities.SelectDictionaryActivity
 ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:25:9-32:20
 	android:screenOrientation
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:28:13-49
@@ -107,41 +107,43 @@ ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\
 	android:configChanges
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:29:13-63
 	android:name
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:26:13-70
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:26:13-81
 activity#com.sign.language.activities.DisplayActivity
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:34:9-40:20
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:34:9-41:20
 	android:screenOrientation
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:37:13-49
 	android:label
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:36:13-45
 	tools:ignore
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:39:13-53
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:40:13-53
 	android:configChanges
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:38:13-63
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:39:13-63
+	android:theme
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:38:13-64
 	android:name
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:35:13-72
 activity#com.sign.language.activities.SearchTextActivity
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:42:9-53:20
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:43:9-54:20
 	android:screenOrientation
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:45:13-49
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:46:13-49
 	android:label
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:44:13-45
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:45:13-45
 	tools:ignore
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:47:13-53
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:48:13-53
 	android:configChanges
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:46:13-63
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:47:13-63
 	android:name
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:43:13-75
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:44:13-75
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:48:13-52:29
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:49:17-69
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:49:25-66
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:51:17-77
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:51:27-74
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:52:27-74
 uses-sdk
 INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml
