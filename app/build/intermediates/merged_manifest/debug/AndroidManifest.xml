@@ -19,26 +19,24 @@
         android:label="@string/app_name"
         android:testOnly="true"
         android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+        <activity android:name="com.sign.language.activities.SignLanguageNumbersActivity" />
         <activity
-            android:name="com.sign.language.activities.SignLanguageSymbolsActivity"
+            android:name="com.sign.language.activities.SignLanguageAlphabetsActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.sign.language.activities.SelectDictionaryActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:parentActivityName="com.sign.language.activities.SearchTextActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.sign.language.activities.DisplayActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.Dialog" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name="com.sign.language.activities.SearchTextActivity"
             android:configChanges="orientation|keyboardHidden"

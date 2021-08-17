@@ -26,17 +26,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:src="@drawable/ic_sign_language"
+                android:src="@drawable/frame_001"
                 tools:ignore="ContentDescription" />
-
-            <TextView
-                android:id="@+id/text"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:gravity="center"
-                android:paddingHorizontal="2dp"
-                android:textSize="14sp"
-                tools:text="@string/select_dictionary" />
 
         </LinearLayout>
 

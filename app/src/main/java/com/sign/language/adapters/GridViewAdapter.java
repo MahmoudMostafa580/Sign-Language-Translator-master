@@ -8,49 +8,46 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.sign.language.R;
 import com.sign.language.model.ImageItem;
 
 
-public class GridViewAdapter extends ArrayAdapter<ImageItem> {
+public class GridViewAdapter extends BaseAdapter {
     private Context context;
-    private int layoutResourceId;
-    private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
+    int [] photos;
+    LayoutInflater inflater;
 
-    public GridViewAdapter(Context context, int layoutResourceId, ArrayList<ImageItem> data) {
-        super(context, layoutResourceId, data);
-        this.layoutResourceId = layoutResourceId;
-        this.context = context;
-        this.data = data;
+    public GridViewAdapter(Context context,int []photos){
+        this.context=context;
+        this.photos=photos;
+        inflater=LayoutInflater.from(context);
+    }
+    @Override
+    public int getCount() {
+        return photos.length;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View row = convertView;
-        ViewHolder holder = null;
-
-        if (row == null) {
-            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-            row = inflater.inflate(layoutResourceId, parent, false);
-            holder = new ViewHolder();
-            holder.imageTitle = (TextView) row.findViewById(R.id.text);
-            holder.image = (ImageView) row.findViewById(R.id.image);
-            row.setTag(holder);
-        } else {
-            holder = (ViewHolder) row.getTag();
-        }
-
-        ImageItem item = data.get(position);
-        holder.imageTitle.setText(item.getTitle());
-        holder.image.setImageBitmap(item.getImage());
-        return row;
-    }
-
-    static class ViewHolder {
-        TextView imageTitle;
-        ImageView image;
+        convertView = inflater.inflate(R.layout.row_grid, null); // inflate the layout
+        ImageView icon = convertView.findViewById(R.id.image); // get the reference of ImageView
+        icon.setImageResource(photos[position]); // set logo images
+        return convertView;
     }
 }

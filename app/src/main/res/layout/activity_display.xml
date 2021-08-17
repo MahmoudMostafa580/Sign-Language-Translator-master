@@ -9,8 +9,6 @@
     android:theme="@style/Theme.AppCompat.Light.Dialog"
     tools:context=".activities.DisplayActivity">
 
-
-
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/Exit_button"
         android:layout_width="48dp"

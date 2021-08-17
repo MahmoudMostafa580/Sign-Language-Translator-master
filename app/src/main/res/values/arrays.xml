@@ -28,7 +28,7 @@
         <item>@drawable/frame_023</item>
         <item>@drawable/frame_024</item>
         <item>@drawable/frame_025</item>
-        <item>@drawable/frame_026</item>       
+        <item>@drawable/frame_026</item>
        
     </string-array>
    
@@ -54,22 +54,7 @@
         <item>@drawable/frame_045</item>
         <item>@drawable/frame_046</item>  
     </string-array>
-   
-     <string-array name="image_fuw">
-        
-        <item>@drawable/frame_047</item>
-        <item>@drawable/frame_048</item>
-        <item>@drawable/frame_049</item>
-        <item>@drawable/frame_050</item>
-        <item>@drawable/frame_051</item>
-        <item>@drawable/frame_052</item>
-       
-    </string-array> 
-     
-    
-    
-    
-    
-    
+
+
 
 </resources>

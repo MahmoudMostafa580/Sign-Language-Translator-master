@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Sign Language Translator</string>
     <string name="select_dictionary">Select Dictionary</string>
-	<string name="Alphabets">Alphabets</string>
-	<string name="Numbers">Numbers</string>
+    <string name="Alphabets">Alphabets</string>
+    <string name="Numbers">Numbers</string>
     <string name="speak">Speak..</string>
     <string name="message_processing">Processing text...please wait</string>
     <string name="message_empty">Enter some text in the search box!!</string>

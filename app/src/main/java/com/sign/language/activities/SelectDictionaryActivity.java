@@ -10,19 +10,19 @@ import android.view.View.OnClickListener;
 import android.content.Intent;
 
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.cardview.widget.CardView;
 
-import com.google.android.material.button.MaterialButton;
 import com.sign.language.R;
 
 public class SelectDictionaryActivity extends Activity implements OnClickListener {
     AppCompatImageButton homeBtn;
-    MaterialButton alphabetBtn,numbersBtn;
+    CardView alphabetBtn,numbersBtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_dictionary);
 
-        alphabetBtn =findViewById(R.id.alphabets_btn);
+        alphabetBtn=findViewById(R.id.alphabets_btn);
         numbersBtn=findViewById(R.id.numbers_btn);
         homeBtn=findViewById(R.id.home_btn);
 
@@ -34,17 +34,17 @@ public class SelectDictionaryActivity extends Activity implements OnClickListene
     @SuppressLint("NonConstantResourceId")
     public void onClick(View v) {
         /* Call MainActivity with appropriate choice */
-        Intent intent = new Intent(SelectDictionaryActivity.this, SignLanguageSymbolsActivity.class);
+
         switch (v.getId())
         {
             case R.id.alphabets_btn:
-                intent.putExtra("Userchoice", 1);
-                startActivity(intent);
+                Intent alphabetsIntent = new Intent(SelectDictionaryActivity.this, SignLanguageAlphabetsActivity.class);
+                startActivity(alphabetsIntent);
                 break;
 
             case R.id.numbers_btn:
-                intent.putExtra("Userchoice", 2);
-                startActivity(intent);
+                Intent numbersIntent = new Intent(SelectDictionaryActivity.this, SignLanguageNumbersActivity.class);
+                startActivity(numbersIntent);
                 break;
 
             case R.id.home_btn:
