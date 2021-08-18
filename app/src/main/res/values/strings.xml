@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sign Language Translator</string>
+    <string name="app_name">American SL</string>
     <string name="select_dictionary">Select Dictionary</string>
     <string name="Alphabets">Alphabets</string>
     <string name="Numbers">Numbers</string>

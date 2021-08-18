@@ -33,7 +33,6 @@ public class SelectDictionaryActivity extends Activity implements OnClickListene
 
     @SuppressLint("NonConstantResourceId")
     public void onClick(View v) {
-        /* Call MainActivity with appropriate choice */
 
         switch (v.getId())
         {
@@ -48,7 +47,6 @@ public class SelectDictionaryActivity extends Activity implements OnClickListene
                 break;
 
             case R.id.home_btn:
-                startActivity(new Intent(SelectDictionaryActivity.this, SearchTextActivity.class));
                 finish();
                 break;
         }

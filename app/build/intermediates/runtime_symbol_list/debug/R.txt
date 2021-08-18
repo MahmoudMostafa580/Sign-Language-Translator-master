@@ -1147,6 +1147,7 @@ int color foreground_material_dark 0x7f06005b
 int color foreground_material_light 0x7f06005c
 int color highlighted_text_material_dark 0x7f06005d
 int color highlighted_text_material_light 0x7f06005e
+int color ic_launcher_background 0x7f0600d0
 int color material_blue_grey_800 0x7f06005f
 int color material_blue_grey_900 0x7f060060
 int color material_blue_grey_950 0x7f060061
@@ -1830,6 +1831,7 @@ int drawable ic_dictionary_book 0x7f0800a3
 int drawable ic_help_sing 0x7f0800a4
 int drawable ic_home 0x7f0800a5
 int drawable ic_keyboard_black_24dp 0x7f0800a6
+int drawable ic_launcher_foreground 0x7f0800fe
 int drawable ic_mtrl_checked_circle 0x7f0800a7
 int drawable ic_mtrl_chip_checked_black 0x7f0800a8
 int drawable ic_mtrl_chip_checked_circle 0x7f0800a9
@@ -1838,7 +1840,6 @@ int drawable ic_numbers_cubes 0x7f0800ab
 int drawable ic_search 0x7f0800ac
 int drawable ic_sign_language 0x7f0800ad
 int drawable ic_voice 0x7f0800ae
-int drawable icon 0x7f0800af
 int drawable material_cursor_drawable 0x7f0800b0
 int drawable material_ic_calendar_black_24dp 0x7f0800b1
 int drawable material_ic_clear_black_24dp 0x7f0800b2
@@ -2520,6 +2521,8 @@ int layout text_view_with_line_height_from_layout 0x7f0c0071
 int layout text_view_with_line_height_from_style 0x7f0c0072
 int layout text_view_with_theme_line_height 0x7f0c0073
 int layout text_view_without_line_height 0x7f0c0074
+int mipmap ic_launcher 0x7f120000
+int mipmap ic_launcher_round 0x7f120001
 int plurals mtrl_badge_content_description 0x7f0d0000
 int string Alphabets 0x7f0e0000
 int string Numbers 0x7f0e0001

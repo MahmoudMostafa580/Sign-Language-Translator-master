@@ -1148,6 +1148,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1831,6 +1832,7 @@ drawable ic_dictionary_book
 drawable ic_help_sing
 drawable ic_home
 drawable ic_keyboard_black_24dp
+drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1839,7 +1841,6 @@ drawable ic_numbers_cubes
 drawable ic_search
 drawable ic_sign_language
 drawable ic_voice
-drawable icon
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2521,6 +2522,8 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+mipmap ic_launcher
+mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string Alphabets
 string Numbers

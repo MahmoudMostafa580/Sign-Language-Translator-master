@@ -81,17 +81,17 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ma
 	android:label
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:14:9-41
 	android:icon
-		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:13:9-38
+		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:13:9-56
 	android:allowBackup
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:15:9-72
 activity#com.sign.language.activities.SignLanguageNumbersActivity
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:9-85
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:9-76
 	android:name
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:19-73
 activity#com.sign.language.activities.SignLanguageAlphabetsActivity
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:17:9-21:61
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:17:9-21:52
 	android:screenOrientation
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:21:13-49
 	android:label
@@ -101,7 +101,7 @@ ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\
 	android:name
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:18:13-69
 activity#com.sign.language.activities.SelectDictionaryActivity
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:22:9-28:65
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:22:9-28:56
 	android:screenOrientation
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:27:13-49
 	android:parentActivityName
@@ -115,7 +115,7 @@ ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\
 	android:name
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:23:13-64
 activity#com.sign.language.activities.DisplayActivity
-ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:29:9-35:65
+ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:29:9-35:56
 	android:screenOrientation
 		ADDED from E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:33:13-49
 	android:label
