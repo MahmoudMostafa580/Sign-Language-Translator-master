@@ -1,116 +1,137 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="#ffffff"
+    android:background="@color/blue"
     android:orientation="vertical"
+    android:scrollbars="none"
     android:padding="16dp"
     android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
     tools:context=".activities.SelectDictionaryActivity">
 
-    <TextView
-        android:id="@+id/select_dictionary_txt"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:text="@string/select_dictionary"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/blue"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/alphabets_btn"
-        android:layout_width="0dp"
-        android:layout_height="224dp"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/blue"
-        android:clickable="true"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/numbers_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/select_dictionary_txt">
-
-        <LinearLayout
+        android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/select_dictionary_txt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="@string/select_dictionary"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+        <androidx.cardview.widget.CardView
+            android:id="@+id/alphabets_btn"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            android:foregroundTint="@android:color/darker_gray"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_dictionary_txt"
+            app:layout_constraintVertical_bias="0.15">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:src="@drawable/ic_alphabets_cubes" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_alphabets_cubes" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Alphabets"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/numbers_btn"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alphabets_btn"
+            app:layout_constraintVertical_bias="0">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_horizontal"
-                android:text="@string/Alphabets"
-                android:textAllCaps="true"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_numbers_cubes" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/numbers_btn"
-        android:layout_width="0dp"
-        android:layout_height="224dp"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/blue"
-        android:clickable="true"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="@id/alphabets_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/alphabets_btn"
-        app:layout_constraintTop_toTopOf="@id/alphabets_btn">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:text="@string/Numbers"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:src="@drawable/ic_numbers_cubes" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/home_btn"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="32dp"
+            android:paddingVertical="8dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_home"
+            android:tint="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numbers_btn"
+            app:layout_constraintVertical_bias="1" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center_horizontal"
-                android:text="@string/Numbers"
-                android:textAllCaps="true"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/home_btn"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginHorizontal="80dp"
-        android:backgroundTint="@color/blue"
-        android:src="@drawable/ic_home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numbers_btn"
-        app:layout_constraintVertical_bias="1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

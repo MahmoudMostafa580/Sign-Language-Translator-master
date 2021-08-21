@@ -1,19 +1,19 @@
 com/sign/language/activities/SignLanguageAlphabetsActivity.java
  com.sign.language.activities.SignLanguageAlphabetsActivity
-com/sign/language/activities/DisplayActivity.java
- com.sign.language.activities.DisplayActivity
-com/sign/language/BuildConfig.java
- com.sign.language.BuildConfig
 com/sign/language/activities/SignLanguageNumbersActivity.java
  com.sign.language.activities.SignLanguageNumbersActivity
-com/sign/language/model/ImageItem.java
- com.sign.language.model.ImageItem
-com/sign/language/adapters/GridViewAdapter.java
- com.sign.language.adapters.GridViewAdapter
+com/sign/language/BuildConfig.java
+ com.sign.language.BuildConfig
 com/sign/language/activities/SearchTextActivity.java
  com.sign.language.activities.SearchTextActivity
  com.sign.language.activities.SearchTextActivity$1
  com.sign.language.activities.SearchTextActivity$LoadImage
  com.sign.language.activities.SearchTextActivity$LoadImage$1
+com/sign/language/adapters/GridViewAdapter.java
+ com.sign.language.adapters.GridViewAdapter
+com/sign/language/activities/DisplayActivity.java
+ com.sign.language.activities.DisplayActivity
 com/sign/language/activities/SelectDictionaryActivity.java
  com.sign.language.activities.SelectDictionaryActivity
+com/sign/language/activities/LauncherActivity.java
+ com.sign.language.activities.LauncherActivity
