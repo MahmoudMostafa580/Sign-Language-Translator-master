@@ -120,7 +120,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
                 /*
                 * "http://www.lifeprint.com/asl101/pages-signs/" + FIRST_CHAR + WORD + ".htm" has images for WORD
                 * */
-                url = new StringBuffer("http://www.lifeprint.com/asl101/pages-signs/");
+                url = new StringBuffer("https://www.lifeprint.com/asl101/pages-signs/");
                 url.append(words[i].charAt(0));
                 url.append('/');
                 url.append(words[i]);
@@ -235,13 +235,13 @@ public class SearchTextActivity extends Activity implements OnClickListener {
 
                     /* Traverse the word from last and add URL for each character to the beginning of URLs list*/
                     for (int i = str.length() - 1; i >= 0; i--) {
-                        /* If the character is a number use "http://www.lifeprint.com/asl101/signjpegs/numbers/number0" and add it to the beginning of URLs list */
+                        /* If the character is a number use "https://www.lifeprint.com/asl101/signjpegs/numbers/number0" and add it to the beginning of URLs list */
                         if (str.charAt(i) <= '9' && str.charAt(i) >= '0')
-                            mURLs.add(0, new StringBuffer("http://www.lifeprint.com/asl101/signjpegs/numbers/number0" + str.charAt(i) + ".jpg"));
+                            mURLs.add(0, new StringBuffer("https://www.lifeprint.com/asl101/signjpegs/numbers/number0" + str.charAt(i) + ".jpg"));
 
-                        /* If the character is an alphabet use "http://www.lifeprint.com/asl101/fingerspelling/abc-gifs/" and add it to the beginning of URLs list */
+                        /* If the character is an alphabet use "https://www.lifeprint.com/asl101/fingerspelling/abc-gifs/" and add it to the beginning of URLs list */
                         else
-                            mURLs.add(0, new StringBuffer("http://www.lifeprint.com/asl101/fingerspelling/abc-gifs/" + str.charAt(i) + "_small.gif"));
+                            mURLs.add(0, new StringBuffer("https://www.lifeprint.com/asl101/fingerspelling/abc-gifs/" + str.charAt(i) + "_small.gif"));
                     }
 
                     /* Remove the newly added character URL and get the image as bitmap */
@@ -264,10 +264,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             }
             try {
                 loadNext();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
