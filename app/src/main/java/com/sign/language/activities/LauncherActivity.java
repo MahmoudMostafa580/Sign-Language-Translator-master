@@ -22,7 +22,7 @@ public class LauncherActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         new Handler().postDelayed(() -> {
-            startActivity(new Intent(getApplicationContext(),SearchTextActivity.class));
+            startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
             finish();
         },2000);
     }

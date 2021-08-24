@@ -60,6 +60,14 @@
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_010.xml"
     },
     {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_dashboard.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\layout\\activity_dashboard.xml"
+    },
+    {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_asl_icon.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_asl_icon.xml"
+    },
+    {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_017.xml.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_017.xml"
     },
@@ -180,6 +188,10 @@
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_009.xml"
     },
     {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dashboard_background.jpg.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\dashboard_background.jpg"
+    },
+    {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_num_9.jpg.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\num_9.jpg"
     },
@@ -196,6 +208,10 @@
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_011.xml"
     },
     {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_next.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_next.xml"
+    },
+    {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_024.xml.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_024.xml"
     },
@@ -204,12 +220,20 @@
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\num_3.jpg"
     },
     {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_text.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_text.xml"
+    },
+    {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_018.xml.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_018.xml"
     },
     {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame_005.xml.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\frame_005.xml"
+    },
+    {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_from_to.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_from_to.xml"
     },
     {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v23_activity_select_dictionary.xml.flat",

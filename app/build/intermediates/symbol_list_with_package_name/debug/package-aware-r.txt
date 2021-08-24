@@ -1770,6 +1770,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable dashboard_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -1803,9 +1804,11 @@ drawable frame_025
 drawable frame_026
 drawable grid_color_selector
 drawable ic_alphabets_cubes
+drawable ic_asl_icon
 drawable ic_clock_black_24dp
 drawable ic_close
 drawable ic_dictionary_book
+drawable ic_from_to
 drawable ic_help_sing
 drawable ic_home
 drawable ic_keyboard_black_24dp
@@ -1814,8 +1817,10 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_next
 drawable ic_numbers_cubes
 drawable ic_search
+drawable ic_text
 drawable ic_voice
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
@@ -2001,6 +2006,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id dashboard_txt
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2236,6 +2242,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id sign_to_text_btn
 id sin
 id skipCollapsed
 id skipped
@@ -2296,6 +2303,7 @@ id textTop
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_to_sign_btn
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2408,6 +2416,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_dashboard
 layout activity_display
 layout activity_launcher
 layout activity_search_text
