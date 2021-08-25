@@ -16,88 +16,137 @@
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:9:5-67
 12-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:9:22-64
-13
-14    <application
-14-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:11:5-52:19
-15        android:allowBackup="true"
-15-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:12:9-35
-16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.5.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\cc5e9dcdc56dc39042f72c501235e83f\core-1.5.0\AndroidManifest.xml:24:18-86
-17        android:debuggable="true"
-18        android:icon="@drawable/ic_launcher_foreground"
-18-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:13:9-56
-19        android:label="@string/app_name"
-19-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:14:9-41
-20        android:testOnly="true"
-21        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
-21-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:15:9-72
-22        <activity android:name="com.sign.language.activities.DashboardActivity" />
-22-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:9-75
-22-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:19-63
-23        <activity
-23-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:17:9-25:20
-24            android:name="com.sign.language.activities.LauncherActivity"
-24-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:18:13-56
-25            android:noHistory="true" >
-25-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:19:13-37
-26            <intent-filter>
-26-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:20:13-24:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:21:17-69
-27-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:21:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:23:17-77
-29-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:23:27-74
-30            </intent-filter>
-31        </activity>
-32        <activity android:name="com.sign.language.activities.SignLanguageNumbersActivity" />
-32-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:26:9-76
-32-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:26:19-73
-33        <activity
-33-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:27:9-31:52
-34            android:name="com.sign.language.activities.SignLanguageAlphabetsActivity"
-34-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:28:13-69
-35            android:configChanges="orientation|keyboardHidden"
-35-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:29:13-63
-36            android:label="@string/app_name"
-36-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:30:13-45
-37            android:screenOrientation="portrait" />
-37-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:31:13-49
-38        <activity
-38-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:32:9-38:56
-39            android:name="com.sign.language.activities.SelectDictionaryActivity"
-39-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:33:13-64
-40            android:configChanges="orientation|keyboardHidden"
-40-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:34:13-63
-41            android:label="@string/app_name"
-41-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:35:13-45
-42            android:parentActivityName="com.sign.language.activities.SearchTextActivity"
-42-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:36:13-72
-43            android:screenOrientation="portrait" />
-43-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:37:13-49
-44        <activity
-44-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:39:9-45:56
-45            android:name="com.sign.language.activities.DisplayActivity"
-45-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:40:13-55
-46            android:configChanges="orientation|keyboardHidden"
-46-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:41:13-63
-47            android:label="@string/app_name"
-47-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:42:13-45
-48            android:screenOrientation="portrait"
-48-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:43:13-49
-49            android:theme="@style/Theme.AppCompat.Light.Dialog" />
-49-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:44:13-64
-50        <activity
-50-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:46:9-51:56
-51            android:name="com.sign.language.activities.SearchTextActivity"
-51-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:47:13-58
-52            android:configChanges="orientation|keyboardHidden"
-52-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:48:13-63
-53            android:label="@string/app_name"
-53-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:49:13-45
-54            android:screenOrientation="portrait" />
-54-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:50:13-49
-55    </application>
-56
-57</manifest>
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:10:5-65
+13-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:10:22-62
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:11:5-66
+14-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:11:22-63
+15    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+15-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:12:5-81
+15-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:12:22-78
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:13:5-80
+16-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:13:22-77
+17    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+17-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:14:5-79
+17-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:14:22-76
+18    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+18-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:15:5-79
+18-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:15:22-76
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:5-79
+19-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:16:22-76
+20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+20-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:10:5-81
+20-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:10:22-78
+21
+22    <uses-feature android:name="android.hardware.camera" />
+22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:14:5-60
+22-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:14:19-57
+23    <uses-feature
+23-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:15:5-17:36
+24        android:name="android.hardware.camera.autofocus"
+24-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:16:9-57
+25        android:required="false" />
+25-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:17:9-33
+26    <uses-feature
+26-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:18:5-20:36
+27        android:name="android.hardware.camera.front"
+27-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:19:9-53
+28        android:required="false" />
+28-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:20:9-33
+29    <uses-feature
+29-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:21:5-23:36
+30        android:name="android.hardware.microphone"
+30-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:22:9-51
+31        android:required="false" />
+31-->[com.wonderkiln:camerakit:0.13.1] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\a88368c692ba8bd00a3d6c601c452708\jetified-camerakit-0.13.1\AndroidManifest.xml:23:9-33
+32
+33    <application
+33-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:18:5-60:19
+34        android:allowBackup="true"
+34-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:19:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.5.0] C:\Users\mahmo\.gradle\caches\transforms-2\files-2.1\cc5e9dcdc56dc39042f72c501235e83f\core-1.5.0\AndroidManifest.xml:24:18-86
+36        android:debuggable="true"
+37        android:icon="@drawable/ic_launcher_foreground"
+37-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:20:9-56
+38        android:label="@string/app_name"
+38-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:21:9-41
+39        android:testOnly="true"
+40        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+40-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:22:9-72
+41        <activity android:name="com.sign.language.activities.SearchSignActivity" />
+41-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:23:9-67
+41-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:23:19-64
+42        <activity android:name="com.sign.language.activities.DashboardActivity" />
+42-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:24:9-66
+42-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:24:19-63
+43        <activity
+43-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:25:9-33:20
+44            android:name="com.sign.language.activities.LauncherActivity"
+44-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:26:13-56
+45            android:noHistory="true" >
+45-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:27:13-37
+46            <intent-filter>
+46-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:28:13-32:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:29:17-69
+47-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:29:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:31:17-77
+49-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:31:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity android:name="com.sign.language.activities.SignLanguageNumbersActivity" />
+52-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:34:9-76
+52-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:34:19-73
+53        <activity
+53-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:35:9-39:52
+54            android:name="com.sign.language.activities.SignLanguageAlphabetsActivity"
+54-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:36:13-69
+55            android:configChanges="orientation|keyboardHidden"
+55-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:37:13-63
+56            android:label="@string/app_name"
+56-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:38:13-45
+57            android:screenOrientation="portrait" />
+57-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:39:13-49
+58        <activity
+58-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:40:9-46:56
+59            android:name="com.sign.language.activities.SelectDictionaryActivity"
+59-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:41:13-64
+60            android:configChanges="orientation|keyboardHidden"
+60-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:42:13-63
+61            android:label="@string/app_name"
+61-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:43:13-45
+62            android:parentActivityName="com.sign.language.activities.SearchTextActivity"
+62-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:44:13-72
+63            android:screenOrientation="portrait" />
+63-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:45:13-49
+64        <activity
+64-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:47:9-53:56
+65            android:name="com.sign.language.activities.DisplayActivity"
+65-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:48:13-55
+66            android:configChanges="orientation|keyboardHidden"
+66-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:49:13-63
+67            android:label="@string/app_name"
+67-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:50:13-45
+68            android:screenOrientation="portrait"
+68-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:51:13-49
+69            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+69-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:52:13-64
+70        <activity
+70-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:54:9-59:56
+71            android:name="com.sign.language.activities.SearchTextActivity"
+71-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:55:13-58
+72            android:configChanges="orientation|keyboardHidden"
+72-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:56:13-63
+73            android:label="@string/app_name"
+73-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:57:13-45
+74            android:screenOrientation="portrait" />
+74-->E:\Android\AndroidStudioProjects\Sign-Language-Translator-master\app\src\main\AndroidManifest.xml:58:13-49
+75    </application>
+76
+77</manifest>

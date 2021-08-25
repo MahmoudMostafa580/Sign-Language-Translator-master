@@ -4,6 +4,10 @@
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\layout\\row_grid.xml"
     },
     {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_flip_camera.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_flip_camera.xml"
+    },
+    {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_numbers_cubes.xml.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_numbers_cubes.xml"
     },
@@ -74,6 +78,10 @@
     {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_language_numbers.xml.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\layout\\activity_sign_language_numbers.xml"
+    },
+    {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_sign.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\layout\\activity_search_sign.xml"
     },
     {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_num_5.jpg.flat",

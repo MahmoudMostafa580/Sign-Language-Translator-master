@@ -1,9 +1,33 @@
-com/sign/language/BuildConfig.java
- com.sign.language.BuildConfig
+com/sign/language/ml/Deploy.java
+ com.sign.language.ml.Deploy
+ com.sign.language.ml.Deploy$1
+ com.sign.language.ml.Deploy$Outputs
 com/sign/language/activities/SignLanguageAlphabetsActivity.java
  com.sign.language.activities.SignLanguageAlphabetsActivity
+com/sign/language/activities/DisplayActivity.java
+ com.sign.language.activities.DisplayActivity
+com/sign/language/activities/LauncherActivity.java
+ com.sign.language.activities.LauncherActivity
+com/sign/language/utalities/Classifier.java
+ com.sign.language.utalities.Classifier
+ com.sign.language.utalities.Classifier$Recognition
+com/sign/language/activities/SearchSignActivity.java
+ com.sign.language.activities.SearchSignActivity
+ com.sign.language.activities.SearchSignActivity$1
+ com.sign.language.activities.SearchSignActivity$2
+ com.sign.language.activities.SearchSignActivity$3
+ com.sign.language.activities.SearchSignActivity$3$1
+ com.sign.language.activities.SearchSignActivity$4
+ com.sign.language.activities.SearchSignActivity$5
+ com.sign.language.activities.SearchSignActivity$6
+com/sign/language/activities/TensorFlowImageClassifier.java
+ com.sign.language.activities.TensorFlowImageClassifier
+ com.sign.language.activities.TensorFlowImageClassifier$1
+ com.sign.language.activities.TensorFlowImageClassifier$2
 com/sign/language/activities/SignLanguageNumbersActivity.java
  com.sign.language.activities.SignLanguageNumbersActivity
+com/sign/language/BuildConfig.java
+ com.sign.language.BuildConfig
 com/sign/language/activities/SearchTextActivity.java
  com.sign.language.activities.SearchTextActivity
  com.sign.language.activities.SearchTextActivity$1
@@ -11,11 +35,7 @@ com/sign/language/activities/SearchTextActivity.java
  com.sign.language.activities.SearchTextActivity$LoadImage$1
 com/sign/language/adapters/GridViewAdapter.java
  com.sign.language.adapters.GridViewAdapter
-com/sign/language/activities/SelectDictionaryActivity.java
- com.sign.language.activities.SelectDictionaryActivity
-com/sign/language/activities/DisplayActivity.java
- com.sign.language.activities.DisplayActivity
 com/sign/language/activities/DashboardActivity.java
  com.sign.language.activities.DashboardActivity
-com/sign/language/activities/LauncherActivity.java
- com.sign.language.activities.LauncherActivity
+com/sign/language/activities/SelectDictionaryActivity.java
+ com.sign.language.activities.SelectDictionaryActivity

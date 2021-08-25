@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">American SL</string>
+    <string name="app_name">Sign language interpreter</string>
     <string name="select_dictionary">Select Dictionary</string>
     <string name="Alphabets">Alphabets</string>
     <string name="Numbers">Numbers</string>
     <string name="speak">Speak..</string>
     <string name="message_processing">Processing text...please wait</string>
     <string name="message_empty">Enter some text in the search box!!</string>
+    <string name="detect_object">Detect object</string>
+    <string name="toggle_camera">Toggle camera</string>
 </resources>
