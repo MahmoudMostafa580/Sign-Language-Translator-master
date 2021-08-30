@@ -144,6 +144,10 @@
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_search.xml"
     },
     {
+        "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_replay_24.xml.flat",
+        "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_baseline_replay_24.xml"
+    },
+    {
         "merged": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_help_sing.xml.flat",
         "source": "E:\\Android\\AndroidStudioProjects\\Sign-Language-Translator-master\\app\\src\\main\\res\\drawable\\ic_help_sing.xml"
     },

@@ -1,11 +1,13 @@
 /* Activity that does voice translation and sign language conversion */
 package com.sign.language.activities;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -15,37 +17,50 @@ import java.util.concurrent.ExecutionException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.sign.language.R;
 
 public class SearchTextActivity extends Activity implements OnClickListener {
     private static final int REQUEST_CODE = 1234;
-    private AppCompatImageView resultImageView;
+    String searchString;
+    Uri videoUri;
+    List<Uri> videosUri = new ArrayList<>();
+    private VideoView videoView;
     private TextInputLayout searchLayout;
-    private AppCompatImageButton searchImageBtn,goToDictionaryImageBtn,voiceConverterImageBtn;
-
+    ImageView help_img;
+    LinearLayout reply;
+    FloatingActionButton fab;
+    private AppCompatImageButton searchImageBtn, goToDictionaryImageBtn, voiceConverterImageBtn;
     private SpeechRecognizer sr;
-    private Bitmap bitmap;
     private StringBuffer url;
-    /* URLs list which will contain URLs for resultant image */
-    private List<StringBuffer> mURLs = new LinkedList<>();
+    int size;
+    String lastSearch = "";
+    /* URLs list which will contain URLs for resultant video */
+    public List<StringBuffer> mURLs = new LinkedList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,22 +68,27 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_text);
 
-        goToDictionaryImageBtn=findViewById(R.id.go_to_dictionary_imageBtn);
-        resultImageView=findViewById(R.id.result_img);
-        searchLayout=findViewById(R.id.search_layout);
-        searchImageBtn=findViewById(R.id.search_imageBtn);
-        voiceConverterImageBtn=findViewById(R.id.voice_converter_imageBtn);
+        goToDictionaryImageBtn = findViewById(R.id.go_to_dictionary_imageBtn);
+        videoView = findViewById(R.id.videoView);
+        searchLayout = findViewById(R.id.search_layout);
+        searchImageBtn = findViewById(R.id.search_imageBtn);
+        voiceConverterImageBtn = findViewById(R.id.voice_converter_imageBtn);
+        help_img = findViewById(R.id.help_img);
+        reply=findViewById(R.id.reply);
+        fab=findViewById(R.id.fab);
 
         goToDictionaryImageBtn.setOnClickListener(this);
-        resultImageView.setOnClickListener(this);
         searchImageBtn.setOnClickListener(this);
         voiceConverterImageBtn.setOnClickListener(this);
+        reply.setOnClickListener(this);
+        fab.setOnClickListener(this);
 
         initSpeechRecognizer();
     }
+
     /*
-    * Onclick handlers for buttons on the Sign Language Conversion Activity
-    */
+     * Onclick handlers for buttons on the Sign Language Conversion Activity
+     */
     public void onClick(View v) {
 
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
@@ -87,51 +107,67 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH);
             intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
             startActivityForResult(intent, REQUEST_CODE);
-
+        }
+        if (v.getId() == R.id.fab){
+            help_img.setVisibility(View.GONE);
+            videoView.setVisibility(View.VISIBLE);
+            reply.setVisibility(View.GONE);
+            videoView.setVideoURI(videosUri.get(0));
+            videoView.start();
+            it = 1;
+            videoView.setOnCompletionListener(mp -> {
+                if (it == videosUri.size())
+                    return;
+                videoView.setVideoURI(videosUri.get(it));
+                videoView.start();
+                it++;
+            });
         }
 
+        if (v.getId() == R.id.reply){
+            help_img.setVisibility(View.GONE);
+            videoView.setVisibility(View.VISIBLE);
+            reply.setVisibility(View.GONE);
+            videoView.setVideoURI(videosUri.get(0));
+            videoView.start();
+            it = 1;
+            videoView.setOnCompletionListener(mp -> {
+                if (it == videosUri.size())
+                    return;
+                videoView.setVideoURI(videosUri.get(it));
+                videoView.start();
+                it++;
+            });
+        }
+
+
         if (v.getId() == R.id.search_imageBtn) {
+            searchString = Objects.requireNonNull(searchLayout.getEditText()).getText().toString();
 
-            inputManager = (InputMethodManager) this.getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
-
-            inputManager.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-
-            Toast.makeText(getApplicationContext(), R.string.message_processing, Toast.LENGTH_SHORT).show();
-
-            /* ImageView which shows the result images*/
-            String searchString;
-
-            if (Objects.requireNonNull(searchLayout.getEditText()).getText().toString().isEmpty()) {
+            if (searchString.isEmpty()) {
                 Toast.makeText(getApplicationContext(), R.string.message_empty, Toast.LENGTH_SHORT).show();
                 return;
-            } else
-                searchString = searchLayout.getEditText().getText().toString();
-            /* Split the input sentence into words */
-            String[] words = searchString.split("\\s+");
+            } else {
 
-            /*Remove special characters and convert uppercase characters to lowercase characters*/
-            for (int i = 0; i < words.length; i++) {
-                words[i] = words[i].replaceAll("[^\\w]", "");
-                words[i] = words[i].toLowerCase();
-            }
-
-            /*Create a URL for each word and it to the URLs list*/
-            for (int i = 0; i < words.length; i++) {
-                /*
-                * "http://www.lifeprint.com/asl101/pages-signs/" + FIRST_CHAR + WORD + ".htm" has images for WORD
-                * */
-                url = new StringBuffer("https://www.lifeprint.com/asl101/pages-signs/");
-                url.append(words[i].charAt(0));
-                url.append('/');
-                url.append(words[i]);
-                url.append(".htm");
-                mURLs.add(url);
-            }
-            try {
-                loadNext();
-            } catch (InterruptedException | ExecutionException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                if (searchString.equals(lastSearch)) {
+                    help_img.setVisibility(View.GONE);
+                    videoView.setVisibility(View.VISIBLE);
+                    videoView.setVideoURI(videosUri.get(0));
+                    videoView.start();
+                    it = 1;
+                    videoView.setOnCompletionListener(mp -> {
+                        if (it == videosUri.size())
+                            return;
+                        videoView.setVideoURI(videosUri.get(it));
+                        videoView.start();
+                        it++;
+                    });
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.message_processing, Toast.LENGTH_SHORT).show();
+                    processingInput();
+                    new LoadVideo().execute();
+                }
+                lastSearch = searchString;
             }
         }
 
@@ -140,8 +176,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             Intent intent = new Intent(SearchTextActivity.this, SelectDictionaryActivity.class);
             startActivity(intent);
         }
-
-
     }
 
     @Override
@@ -170,27 +204,87 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         }
     }
 
-    public void onPause() {
-        super.onPause();
-    }
 
-    public void onResume() {
-        super.onResume();
-    }
+    private void processingInput() {
 
+        mURLs = new LinkedList<>();
+        videosUri = new ArrayList<>();
+        /* Split the input sentence into words */
+        String[] words = searchString.split("\\s+");
+
+
+        /*Remove special characters and convert uppercase characters to lowercase characters*/
+        for (int i = 0; i < words.length; i++) {
+            words[i] = words[i].replaceAll("[^\\w]", "");
+            words[i] = words[i].toLowerCase();
+        }
+
+        /*Create a URL for each word and add it to the URLs list*/
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() == 1 && Character.isLetter(words[i].charAt(0)) && !words[i].equals("i")) {
+
+                String videosUrl = "https://media.spreadthesign.com/video/mp4/13/alphabet-letter-"
+                        +
+                        (((int) words[i].charAt(0)) - 97 + 591)
+                        + "-1.mp4";
+                url = new StringBuffer(videosUrl);
+                mURLs.add(url);
+            } else {
+                boolean isNum = true;
+                for (int j = 0; j < words[i].length(); j++) {
+                    if (Character.isLetter(words[i].charAt(j))) {
+                        isNum = false;
+                        break;
+                    }
+                }
+                if (isNum) {
+
+                    List<String> numbers = new ArrayList<>();
+                    int num = Integer.parseInt(words[i]);
+                    if (num <= 100) {
+                        url = new StringBuffer("https://www.spreadthesign.com/en.us/search/?q=");
+                        url.append(words[i]);
+                        mURLs.add(url);
+                    } else {
+                        numbers.add(String.valueOf(Integer.parseInt(words[i].substring(words[i].length() - 2))));
+                        for (int j = words[i].length() - 3; j >= 0; j--) {
+                            numbers.add(j == 0 && words[i].length() == 4 ? words[i].charAt(j) + "000" :
+                                    words[i].charAt(j) + "00");
+                        }
+                        Collections.reverse(numbers);
+                        for (int j = 0; j < numbers.size(); j++) {
+                            url = new StringBuffer("https://www.spreadthesign.com/en.us/search/?q=");
+                            url.append(numbers.get(j));
+                            mURLs.add(url);
+                        }
+                    }
+
+                } else {
+                    url = new StringBuffer("https://www.spreadthesign.com/en.us/search/?q=");
+                    url.append(words[i]);
+                    mURLs.add(url);
+                }
+            }
+        }
+        size = mURLs.size();
+    }
 
     /* Removes URL one by one from the list and delegates to LoadImage method */
     private void loadNext() throws InterruptedException, ExecutionException {
+        url = mURLs.remove(0);
+
         if (mURLs.isEmpty()) {
             return;
         }
-        url = mURLs.remove(0);
         if (url != null) {
-            new LoadImage().execute();
+            new LoadVideo().execute();
         }
     }
 
-    private class LoadImage extends AsyncTask<Void, Void, Void> {
+
+    int it = 1;
+
+    private class LoadVideo extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -199,77 +293,77 @@ public class SearchTextActivity extends Activity implements OnClickListener {
 
         @Override
         protected Void doInBackground(Void... args) {
-            /* if url is URL of number/alphabet */
-            if(url.indexOf("numbers")>=0 || url.indexOf("fingerspelling")>=0){
-                try {
-                    bitmap = BitmapFactory.decodeStream((InputStream) new URL(url.toString()).getContent());
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            }
 
-            /* if url is URL of a word */
-            else {
-                try {
-                    /* Connect to the website using Jsoup and retrieve the first "jpg" image as Bitmap*/
-                    Document doc = Jsoup.connect(url.toString()).ignoreContentType(true).get();
-                    Element img = doc.select("img[src$=.jpg]").first();
-                    String Str = img.attr("abs:src");
-                    bitmap = BitmapFactory.decodeStream((InputStream) new URL(Str).getContent());
-                }
-                catch (UnknownHostException e) {
-                    /* UnKnownHostException raised when there is no internet */
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-                            Toast.makeText(SearchTextActivity.this, "No internet", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-                catch (Exception e) {
-                    /* Exception is raised when the word is not there in lifeprint.com */
-                    bitmap = null;
-                    String t = url.toString();
-
-                    /* Get the word from the URL */
-                    String str = t.substring(46, t.lastIndexOf('.'));
-
-                    /* Traverse the word from last and add URL for each character to the beginning of URLs list*/
-                    for (int i = str.length() - 1; i >= 0; i--) {
-                        /* If the character is a number use "https://www.lifeprint.com/asl101/signjpegs/numbers/number0" and add it to the beginning of URLs list */
-                        if (str.charAt(i) <= '9' && str.charAt(i) >= '0')
-                            mURLs.add(0, new StringBuffer("https://www.lifeprint.com/asl101/signjpegs/numbers/number0" + str.charAt(i) + ".jpg"));
-
-                        /* If the character is an alphabet use "https://www.lifeprint.com/asl101/fingerspelling/abc-gifs/" and add it to the beginning of URLs list */
-                        else
-                            mURLs.add(0, new StringBuffer("https://www.lifeprint.com/asl101/fingerspelling/abc-gifs/" + str.charAt(i) + "_small.gif"));
-                    }
-
-                    /* Remove the newly added character URL and get the image as bitmap */
-                    StringBuffer url = mURLs.remove(0);
-                    try {
-                        bitmap = BitmapFactory.decodeStream((InputStream) new URL(url.toString()).getContent());
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            /* The bitmap is set to ImageView onPost downloading and loadNext method is called for next URL in the URLs list*/
-            if (bitmap != null) {
-                resultImageView.setImageBitmap(bitmap);
-            }
             try {
                 loadNext();
             } catch (InterruptedException | ExecutionException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+
+            /* if url is URL of a word */
+            try {
+                /* Connect to the website using Jsoup and retrieve the video result*/
+                Log.w("IN", "" + url.toString());
+                if (url.toString().contains("alphabet-letter")) {
+                    videosUri.add(Uri.parse(url.toString()));
+                } else {
+                    Document doc = Jsoup.connect(url.toString()).ignoreContentType(true).get();
+                    Elements videoE = doc.select("video");
+                    String videoSearchUrl = videoE.attr("abs:src");
+                    if (!videoE.hasAttr("abs:src")){
+                        String t = url.toString();
+                        /* Get the word from the URL */
+                        String str = t.substring(46);
+                        Log.w("str",str);
+                        for (int i = 0; i < str.length() ; i++) {
+                            videosUri.add(Uri.parse("https://media.spreadthesign.com/video/mp4/13/alphabet-letter-"
+                                    +
+                                    (((int) str.charAt(i)) - 97 + 591)
+                                    + "-1.mp4"));
+                            Log.w("str",str.charAt(i)+"");
+                        }
+                    }else{
+                        Log.v("video url: ", videoSearchUrl + " , " + videoE.hasAttr("abs:src") + " , " + videoE.hasAttr("src"));
+                        videosUri.add(Uri.parse(videoSearchUrl));
+                    }
+
+                }
+            } catch (UnknownHostException e) {
+                /* UnKnownHostException raised when there is no internet */
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        Toast.makeText(SearchTextActivity.this, "No internet", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } catch (IOException e) {
+                Log.w("LOOOOG", "" + e.getMessage());
+            }
+            return null;
         }
 
+        @Override
+        protected void onPostExecute(Void result) {
+            if ( mURLs.isEmpty()) {
+                help_img.setVisibility(View.GONE);
+                videoView.setVisibility(View.VISIBLE);
+
+                videoView.setVideoURI(videosUri.get(0));
+                videoView.start();
+                it = 1;
+                videoView.setOnCompletionListener(mp -> {
+                    if (it == videosUri.size()){
+                        reply.setVisibility(View.VISIBLE);
+                        return;
+                    }
+
+                    Log.w("Vid", videosUri.get(it) + "");
+                    videoView.setVideoURI(videosUri.get(it));
+                    videoView.start();
+                    it++;
+                });
+            }
+        }
     }
 }
 
