@@ -86,27 +86,15 @@ public class SearchSignActivity extends Activity {
             }
         });
 
-        btnToggleCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cameraView.toggleFacing();
+        btnToggleCamera.setOnClickListener(v -> cameraView.toggleFacing());
 
-            }
-        });
+        btnDetectObject.setOnClickListener(v -> {
+            cameraView.captureImage();
+            final Handler handler = new Handler();
+            handler.postDelayed(() -> {
 
-        btnDetectObject.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cameraView.captureImage();
-                final Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                    }
-                }, 3000);
-                cameraView.captureImage();
-            }
+            }, 3000);
+            cameraView.captureImage();
         });
 
         initTensorFlowAndLoadModel();
@@ -126,39 +114,26 @@ public class SearchSignActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                classifier.close();
-            }
-        });
+        executor.execute(() -> classifier.close());
     }
 
     private void initTensorFlowAndLoadModel() {
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    classifier = TensorFlowImageClassifier.create(
-                            getAssets(),
-                            MODEL_PATH,
-                            LABEL_PATH,
-                            INPUT_SIZE,
-                            QUANT);
-                    makeButtonVisible();
-                } catch (final Exception e) {
-                    throw new RuntimeException("Error initializing TensorFlow!", e);
-                }
+        executor.execute(() -> {
+            try {
+                classifier = TensorFlowImageClassifier.create(
+                        getAssets(),
+                        MODEL_PATH,
+                        LABEL_PATH,
+                        INPUT_SIZE,
+                        QUANT);
+                makeButtonVisible();
+            } catch (final Exception e) {
+                throw new RuntimeException("Error initializing TensorFlow!", e);
             }
         });
     }
 
     private void makeButtonVisible() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                btnDetectObject.setVisibility(View.VISIBLE);
-            }
-        });
+        runOnUiThread(() -> btnDetectObject.setVisibility(View.VISIBLE));
     }
 }

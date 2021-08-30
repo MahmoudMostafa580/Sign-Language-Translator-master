@@ -5,8 +5,10 @@
     <string name="Alphabets">Alphabets</string>
     <string name="Numbers">Numbers</string>
     <string name="speak">Speak..</string>
-    <string name="message_processing">Processing text...please wait</string>
+    <string name="message_processing">Processing text…please wait</string>
     <string name="message_empty">Enter some text in the search box!!</string>
     <string name="detect_object">Detect object</string>
     <string name="toggle_camera">Toggle camera</string>
+    <string name="reload_search">Reload search</string>
+    <string name="enter_text_or_tap_on_mic">Enter text or tap on mic</string>
 </resources>

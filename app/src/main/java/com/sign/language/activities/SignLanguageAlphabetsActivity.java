@@ -12,7 +12,7 @@ import com.sign.language.adapters.GridViewAdapter;
 public class SignLanguageAlphabetsActivity extends Activity {
     private GridView gridView;
     private GridViewAdapter customGridAdapter;
-    private int photos[]={
+    private final int[] photos ={
             R.drawable.frame_001,
             R.drawable.frame_002,
             R.drawable.frame_003,

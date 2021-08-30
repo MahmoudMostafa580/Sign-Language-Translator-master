@@ -1,10 +1,9 @@
 /* Activity that does voice translation and sign language conversion */
 package com.sign.language.activities;
 
-import java.io.FileNotFoundException;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
+
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,13 +15,11 @@ import java.util.concurrent.ExecutionException;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -38,7 +35,6 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
@@ -47,7 +43,6 @@ import com.sign.language.R;
 public class SearchTextActivity extends Activity implements OnClickListener {
     private static final int REQUEST_CODE = 1234;
     String searchString;
-    Uri videoUri;
     List<Uri> videosUri = new ArrayList<>();
     private VideoView videoView;
     private TextInputLayout searchLayout;
@@ -140,7 +135,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             });
         }
 
-
         if (v.getId() == R.id.search_imageBtn) {
             searchString = Objects.requireNonNull(searchLayout.getEditText()).getText().toString();
 
@@ -204,7 +198,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         }
     }
 
-
     private void processingInput() {
 
         mURLs = new LinkedList<>();
@@ -220,19 +213,19 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         }
 
         /*Create a URL for each word and add it to the URLs list*/
-        for (int i = 0; i < words.length; i++) {
-            if (words[i].length() == 1 && Character.isLetter(words[i].charAt(0)) && !words[i].equals("i")) {
+        for (String word : words) {
+            if (word.length() == 1 && Character.isLetter(word.charAt(0)) && !word.equals("i")) {
 
                 String videosUrl = "https://media.spreadthesign.com/video/mp4/13/alphabet-letter-"
                         +
-                        (((int) words[i].charAt(0)) - 97 + 591)
+                        (((int) word.charAt(0)) - 97 + 591)
                         + "-1.mp4";
                 url = new StringBuffer(videosUrl);
                 mURLs.add(url);
             } else {
                 boolean isNum = true;
-                for (int j = 0; j < words[i].length(); j++) {
-                    if (Character.isLetter(words[i].charAt(j))) {
+                for (int j = 0; j < word.length(); j++) {
+                    if (Character.isLetter(word.charAt(j))) {
                         isNum = false;
                         break;
                     }
@@ -240,16 +233,16 @@ public class SearchTextActivity extends Activity implements OnClickListener {
                 if (isNum) {
 
                     List<String> numbers = new ArrayList<>();
-                    int num = Integer.parseInt(words[i]);
+                    int num = Integer.parseInt(word);
                     if (num <= 100) {
                         url = new StringBuffer("https://www.spreadthesign.com/en.us/search/?q=");
-                        url.append(words[i]);
+                        url.append(word);
                         mURLs.add(url);
                     } else {
-                        numbers.add(String.valueOf(Integer.parseInt(words[i].substring(words[i].length() - 2))));
-                        for (int j = words[i].length() - 3; j >= 0; j--) {
-                            numbers.add(j == 0 && words[i].length() == 4 ? words[i].charAt(j) + "000" :
-                                    words[i].charAt(j) + "00");
+                        numbers.add(String.valueOf(Integer.parseInt(word.substring(word.length() - 2))));
+                        for (int j = word.length() - 3; j >= 0; j--) {
+                            numbers.add(j == 0 && word.length() == 4 ? word.charAt(j) + "000" :
+                                    word.charAt(j) + "00");
                         }
                         Collections.reverse(numbers);
                         for (int j = 0; j < numbers.size(); j++) {
@@ -261,7 +254,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
 
                 } else {
                     url = new StringBuffer("https://www.spreadthesign.com/en.us/search/?q=");
-                    url.append(words[i]);
+                    url.append(word);
                     mURLs.add(url);
                 }
             }
@@ -269,7 +262,7 @@ public class SearchTextActivity extends Activity implements OnClickListener {
         size = mURLs.size();
     }
 
-    /* Removes URL one by one from the list and delegates to LoadImage method */
+    /* Removes URL one by one from the list and delegates to LoadImage */
     private void loadNext() throws InterruptedException, ExecutionException {
         url = mURLs.remove(0);
 
@@ -280,7 +273,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
             new LoadVideo().execute();
         }
     }
-
 
     int it = 1;
 
@@ -301,7 +293,6 @@ public class SearchTextActivity extends Activity implements OnClickListener {
                 e.printStackTrace();
             }
 
-            /* if url is URL of a word */
             try {
                 /* Connect to the website using Jsoup and retrieve the video result*/
                 Log.w("IN", "" + url.toString());
@@ -331,13 +322,9 @@ public class SearchTextActivity extends Activity implements OnClickListener {
                 }
             } catch (UnknownHostException e) {
                 /* UnKnownHostException raised when there is no internet */
-                runOnUiThread(new Runnable() {
-                    public void run() {
-                        Toast.makeText(SearchTextActivity.this, "No internet", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                runOnUiThread(() -> Toast.makeText(SearchTextActivity.this, "No internet", Toast.LENGTH_SHORT).show());
             } catch (IOException e) {
-                Log.w("LOOOOG", "" + e.getMessage());
+                e.printStackTrace();
             }
             return null;
         }

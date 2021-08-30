@@ -14,7 +14,7 @@ public class SignLanguageNumbersActivity extends Activity {
 
     private GridView gridView;
     private GridViewAdapter customGridAdapter;
-    private int photos[] = {
+    private final int[] photos = {
             R.drawable.num_1,
             R.drawable.num_2,
             R.drawable.num_3,

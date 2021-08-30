@@ -29,7 +29,8 @@
         app:layout_constraintBottom_toTopOf="@id/go_to_dictionary_imageBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
     <LinearLayout
         android:id="@+id/reply"
         android:layout_width="wrap_content"
@@ -50,11 +51,12 @@
             android:src="@drawable/ic_baseline_replay_24"
             android:layout_gravity="center"
             app:tint="@color/white"
-            android:backgroundTint="@color/blue"/>
+            android:backgroundTint="@color/blue"
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reload search"
+            android:text="@string/reload_search"
             android:layout_gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"/>
@@ -110,7 +112,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Enter text or tap on mic"
+            android:hint="@string/enter_text_or_tap_on_mic"
             android:inputType="text"
             android:textColor="#000000"
             android:textColorHint="@color/blue"
